@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Estates App</title>
+<style>
+:root {
+    --primary-color: #1e40af;
+    --primary-light: #3b82f6;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --bg-dark: #111827;
+    --bg-white: #ffffff;
+    --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.4);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: system-ui, sans-serif;
+    color: var(--text-primary);
+}
+
+.navbar {
+    background: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-light);
+}
+
+.hero {
+    min-height: 100vh;
+    background:
+        linear-gradient(135deg, rgba(30,64,175,.85), rgba(59,130,246,.85)),
+        url("https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=1600&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 4rem 2rem;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: .95;
+    margin-bottom: 2rem;
+}
+
+.download-btn {
+    background: white;
+    color: var(--text-primary);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.hero-phones {
+    display: flex;
+    justify-content: center;
+}
+
+.phone-mockup {
+    width: 280px;
+    height: 560px;
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow: var(--shadow-xl);
+    position: relative;
+}
+
+.phone-notch {
+    width: 120px;
+    height: 25px;
+    background: black;
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    background: black;
+}
+
+.phone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.features {
+    padding: 5rem 2rem;
+    background: #f9fafb;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.features p {
+    max-width: 600px;
+    margin: auto;
+    color: var(--text-secondary);
+}
+
+.se {
+    padding: 4rem 2rem;
+    background: var(--bg-dark);
+    color: white;
+    text-align: center;
+}
+
+footer {
+    background: black;
+    color: #9ca3af;
+    text-align: center;
+    padding: 2rem;
+}
+
+@media (max-width: 900px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .download-btn {
+        margin: 0.5rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+          <span class="logo-icon">🏠</span>
+          <span>ELITE ESTATES</span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <div>
+            <h1 class="hero-title">Find Your Next Home, Anywhere</h1>
+            <p class="hero-subtitle">
+                Browse homes, take virtual tours, and talk to trusted agents — all from your phone with the Elite Estates app.
+            </p>
+            <a href="#" class="download-btn">App Store</a>
+            <a href="#" class="download-btn">Google Play</a>
+        </div>
+        <div class="hero-phones">
+            <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=600&auto=format&fit=crop" alt="App Preview">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <h2>Everything You Need in One App</h2>
+    <p>
+        Search smarter, save favorites, and stay connected with agents — simple tools designed for real people.
+    </p>
+</section>
+
+<section class="se">
+    <h2>Start Your Home Search Today</h2>
+    <p>Download the Elite Estates app and make your search easier.</p>
+</section>
+
+<footer>
+    © 2026 Elite Estates — find house with us.
+</footer>
+
+</body>
+</html>
