@@ -6,7 +6,6 @@
     <title>Elite Estates - Premium Real Estate Solutions</title>
 
     <style>
-      /* ==================== ROOT VARIABLES ====================  */
       :root {
         --primary-color: #1e40af;
         --primary-dark: #1e3a8a;
@@ -46,12 +45,7 @@
         overflow-x: hidden;
       }
 
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
+      h1, h2, h3, h4, h5, h6 {
         font-weight: 700;
         line-height: 1.2;
         color: var(--text-primary);
@@ -68,8 +62,6 @@
         margin: 0 auto;
         padding: 0 2rem;
       }
-
-      /* ==================== NAVIGATION ====================  */
       .navbar {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
@@ -156,8 +148,6 @@
         border-radius: 2px;
         transition: var(--transition);
       }
-
-      /* ==================== HERO SECTION ====================  */
       .hero {
         min-height: 100vh;
         background: linear-gradient(
@@ -217,8 +207,6 @@
         flex-wrap: wrap;
         animation: fadeInUp 0.8s ease 0.4s both;
       }
-
-      /* ==================== APP DOWNLOAD SECTION ====================  */
       .app-download {
         background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         padding: 5rem 2rem;
@@ -358,8 +346,6 @@
         left: 50%;
         transform: translateX(-50%);
       }
-
-      /* ==================== BUTTONS ====================  */
       .btn-primary,
       .btn-secondary {
         display: inline-block;
@@ -396,7 +382,6 @@
         transform: translateY(-2px);
       }
 
-      /* ==================== SERVICES SECTION ====================  */
       .services {
         padding: 6rem 2rem;
         background: var(--bg-light);
@@ -458,8 +443,6 @@
         line-height: 1.7;
         font-size: 0.95rem;
       }
-
-      /* ==================== STATS SECTION ====================  */
       .stats-section {
         padding: 5rem 2rem;
         background: white;
@@ -488,8 +471,6 @@
         font-size: 1.1rem;
         color: var(--text-secondary);
       }
-
-      /* ==================== CTA SECTION ====================  */
       .cta-section {
         background: linear-gradient(
             135deg,
@@ -519,7 +500,6 @@
         opacity: 0.9;
       }
 
-      /* ==================== FOOTER ====================  */
       .footer {
         background: var(--bg-dark);
         color: var(--bg-white);
@@ -592,8 +572,6 @@
           transform: translateY(0);
         }
       }
-
-      /* ==================== RESPONSIVE ====================  */
       @media (max-width: 768px) {
         .mobile-toggle {
           display: flex;
@@ -708,7 +686,6 @@
     </style>
   </head>
   <body>
-    <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
         <a href="index.html" class="logo">
@@ -723,13 +700,13 @@
         <ul class="nav-links" id="navLinks">
           <li><a href="#home" class="active">Home</a></li>
           <li><a href="about.html">About us</a></li>
-          <li><a href="#app">Mobile App</a></li>
+          <li><a href="mobileapp.html">Mobile App</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </nav>
 
-    <!-- Hero Section -->
+ 
     <section class="hero" id="home">
       <div class="hero-content">
         <h1 class="hero-title">Transform Your Dream Home Into Reality</h1>
@@ -739,12 +716,10 @@
         </p>
         <div class="hero-buttons">
           <a href="contact.html" class="btn-primary">Schedule Consultation</a>
-          <a href="#app" class="btn-secondary">Download Our App</a>
+          <a href="mobileapp.html" class="btn-secondary">Download Our App</a>
         </div>
       </div>
     </section>
-
-    <!-- Stats Section -->
     <section class="stats-section">
         <h1 class="our">Our Goals</h1>
       <div class="stats-grid">
@@ -911,8 +886,6 @@
         </div>
       </div>
     </section>
-
-    <!-- App Download Section -->
     <section class="app-download" id="app">
       <div class="app-content">
         <div class="app-text">
