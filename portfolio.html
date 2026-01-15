@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishimwe Rocky - Aspiring Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" href="images-removebg-preview.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        /* Custom Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .group:hover .group-hover\:scale-105 {
+            transform: scale(1.05);
+        }
+        
+        .group:hover .group-hover\:opacity-100 {
+            opacity: 1;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gray: {
+                            900: '#111827',
+                            800: '#1f2937',
+                            400: '#9ca3af',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="overflow-x-hidden selection:bg-white selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-6 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/5">
+        <div class="flex items-center gap-2">
+            <div class="text-2xl font-bold tracking-tighter text-gray-400">
+                <span class="text-white">I</span> ISHIMWE
+            </div>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+            <a href="index.html" class="mobile-link hover:text-white">Home</a>
+            <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+            <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+            <a href="#strengths" class="hover:text-white transition-colors">Strengths</a>
+            <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+        </div>
+
+        <div class="hidden md:block">
+            <button class="px-6 py-2 rounded-full border border-gray-800 bg-gray-900/50 hover:bg-gray-800 transition-colors text-sm font-medium text-white">
+                Rocky Dev Portfolio
+            </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-white">
+            <i data-lucide="menu"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-black pt-24 px-6 hidden md:hidden">
+        <div class="flex flex-col gap-6 text-xl font-medium text-gray-400">
+            <a href="index.html" class="mobile-link hover:text-white">Home</a>
+            <a href="#skills" class="mobile-link hover:text-white">Skills</a>
+            <a href="#projects" class="mobile-link hover:text-white">Projects</a>
+            <a href="#strengths" class="mobile-link hover:text-white">Strengths</a>
+            <a href="contact.html" class="mobile-link hover:text-white">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center px-4 pt-20 text-center">
+        <div class="mb-8 fade-in-up">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900/80 border border-gray-800 backdrop-blur-sm">
+                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                <span class="text-sm font-medium text-gray-300">Ishimwe Rocky</span>
+            </div>
+        </div>
+
+        <h1 class="fade-in-up delay-200 text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight max-w-5xl mx-auto leading-[1.1] mb-8 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">
+            Aspiring Software Developer
+        </h1>
+
+        <p class="fade-in-up delay-300 text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
+            Motivated and self-driven with a strong interest in modern web development and interactive applications.
+        </p>
+
+        <div class="fade-in-up delay-400 flex flex-col sm:flex-row gap-4 items-center justify-center">
+            <a href="#contact" class="px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]">
+                Hire Me
+            </a>
+            <a href="#projects" class="px-8 py-4 rounded-full border border-gray-700 bg-black/50 backdrop-blur-sm hover:bg-gray-900 transition-all hover:border-gray-500 text-white">
+                See Projects
+            </a>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 text-sm fade-in-up delay-500">
+            <span>Scroll down</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-gray-500 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-4 md:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-sm font-medium text-gray-500 mb-4 uppercase tracking-wider">Portfolio</h2>
+            <h3 class="text-3xl md:text-4xl font-bold">Selected Projects</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Project 1 -->
+            <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-900 cursor-pointer">
+                <img src="https://pixabay.com/get/g1ad5570e25b3f889208afb4cbc502f088d91b5b19edaf128832401e431f1ad96cf3949ce5fb41c3ba406ba3665c432109c06a93557bda0e7c2f6aaac1088f305_1280.jpg" alt="React Practice" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">React Practice Projects</h3>
+                        <p class="text-gray-300 mb-4">Components • State • Hooks</p>
+                        <p class="text-gray-400 text-sm line-clamp-2">Built small React applications to understand components, state, hooks, and basic game logic.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-900 md:mt-16 cursor-pointer">
+                <img src="https://pixabay.com/get/gb8136f2756d09bd6242d93413b5d3f2bc9aca39b9d218474ec9e65a9b9b9f99ef2425053281625bb847a891719ee09292a7ef65fdf762cbe935fac59963ff0dd_1280.jpg" alt="Web UI Experiments" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Web UI Experiments</h3>
+                        <p class="text-gray-300 mb-4">HTML5 • CSS3 • Responsive</p>
+                        <p class="text-gray-400 text-sm line-clamp-2">Designed responsive landing pages using HTML and CSS. Practiced layout systems and modern UI patterns.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-900 cursor-pointer">
+                <img src="https://pixabay.com/get/g7bf83894edf5fc5773306dc4788bf6c20ad97666d206f20be3e6f65d18c7302d032a830e2fae15a644cdf858cb04548bd69cb88fbea1e08ccbe2470522f4f03e_1280.jpg" alt="Arduino Prototypes" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Arduino Prototypes</h3>
+                        <p class="text-gray-300 mb-4">Hardware • Circuits • LEDs</p>
+                        <p class="text-gray-400 text-sm line-clamp-2">Created basic hardware prototypes using LEDs, resistors, and PWM for fading effects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-24 px-4 md:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-sm font-medium text-gray-500 mb-4 uppercase tracking-wider">About Me</h2>
+                <h3 class="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                    Passionate about clean UI, problem solving, and continuous learning.
+                </h3>
+                <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                    Actively building skills through hands-on projects, tutorials, and experimentation with frontend frameworks and basic hardware prototyping. I am a fast learner and highly curious about how things work.
+                </p>
+                
+                <div class="flex flex-wrap gap-3 mb-10">
+                    <span class="px-4 py-2 rounded-full bg-gray-900 text-gray-300 text-sm border border-gray-800">React</span>
+                    <span class="px-4 py-2 rounded-full bg-gray-900 text-gray-300 text-sm border border-gray-800">JavaScript</span>
+                    <span class="px-4 py-2 rounded-full bg-gray-900 text-gray-300 text-sm border border-gray-800">HTML</span>
+                    <span class="px-4 py-2 rounded-full bg-gray-900 text-gray-300 text-sm border border-gray-800">TailwindCSS</span>
+                    <span class="px-4 py-2 rounded-full bg-gray-900 text-gray-300 text-sm border border-gray-800">Node.js</span>
+                    <span class="px-4 py-2 rounded-full bg-gray-900 text-gray-300 text-sm border border-gray-800">Git</span>
+                    <span class="px-4 py-2 rounded-full bg-gray-900 text-gray-300 text-sm border border-gray-800">Arduino</span>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex justify-between items-center border-b border-gray-800 pb-4">
+                        <div>
+                            <h4 class="font-semibold">Frontend Development</h4>
+                            <p class="text-gray-500 text-sm">React, HTML, CSS</p>
+                        </div>
+                        <span class="text-gray-500 text-sm">Focus</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-gray-800 pb-4">
+                        <div>
+                            <h4 class="font-semibold">Hardware Prototyping</h4>
+                            <p class="text-gray-500 text-sm">Arduino, Tinkercard</p>
+                        </div>
+                        <span class="text-gray-500 text-sm">Interest</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-gray-900">
+                    <img src="https://pixabay.com/get/g21d2d90125ebb0f51548751ef5516eca559127d67b2ca1a134fd1636587abd89aedc0cbaf3048f81334e2eb327e6a46af3aacdbecb5d8f73253099fe2aa6458d_1280.jpg" alt="Workspace" class="object-cover w-full h-full opacity-80">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning & Development Section -->
+    <section class="py-24 px-4 md:px-8 max-w-7xl mx-auto bg-gray-900/20 rounded-3xl my-12">
+        <div class="text-center mb-16">
+            <h2 class="text-sm font-medium text-gray-500 mb-4 uppercase tracking-wider">Growth</h2>
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">Learning & Development</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-8 rounded-2xl bg-gray-900/50 border border-gray-800 hover:border-gray-700 transition-colors">
+                <span class="text-4xl font-bold text-gray-700 mb-6 block">01</span>
+                <h4 class="text-xl font-bold mb-4">Continuous Learning</h4>
+                <p class="text-gray-400 leading-relaxed">Regularly following high-quality backend and full‑stack tutorials to stay updated with industry standards.</p>
+            </div>
+            <div class="p-8 rounded-2xl bg-gray-900/50 border border-gray-800 hover:border-gray-700 transition-colors">
+                <span class="text-4xl font-bold text-gray-700 mb-6 block">02</span>
+                <h4 class="text-xl font-bold mb-4">Problem Solving</h4>
+                <p class="text-gray-400 leading-relaxed">Practicing coding challenges and algorithmic thinking to improve logic and efficiency.</p>
+            </div>
+            <div class="p-8 rounded-2xl bg-gray-900/50 border border-gray-800 hover:border-gray-700 transition-colors">
+                <span class="text-4xl font-bold text-gray-700 mb-6 block">03</span>
+                <h4 class="text-xl font-bold mb-4">Architecture</h4>
+                <p class="text-gray-400 leading-relaxed">Continuously improving understanding of software architecture and best practices for scalable applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-24 px-4 md:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-sm font-medium text-gray-500 mb-4 uppercase tracking-wider">Expertise</h2>
+                <h3 class="text-3xl md:text-4xl font-bold mb-6">Technical Skills & Tools</h3>
+                <div class="aspect-square rounded-2xl overflow-hidden bg-gray-900 mt-8">
+                    <img src="https://pixabay.com/get/g1ad5570e25b3f889208afb4cbc502f088d91b5b19edaf128832401e431f1ad96cf3949ce5fb41c3ba406ba3665c432109c06a93557bda0e7c2f6aaac1088f305_1280.jpg" alt="Coding" class="object-cover w-full h-full opacity-80">
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="p-6 rounded-xl border border-gray-800 hover:bg-gray-900/50 transition-colors flex gap-4">
+                    <div class="mt-1 text-blue-400"><i data-lucide="layout"></i></div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Frontend Development</h4>
+                        <p class="text-gray-400">HTML5, CSS3, JavaScript, React (fundamentals). Building responsive and interactive UIs.</p>
+                    </div>
+                </div>
+                <div class="p-6 rounded-xl border border-gray-800 hover:bg-gray-900/50 transition-colors flex gap-4">
+                    <div class="mt-1 text-green-400"><i data-lucide="database"></i></div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Backend Basics</h4>
+                        <p class="text-gray-400">Node.js basics, API concepts. Understanding server-side logic and data flow.</p>
+                    </div>
+                </div>
+                <div class="p-6 rounded-xl border border-gray-800 hover:bg-gray-900/50 transition-colors flex gap-4">
+                    <div class="mt-1 text-yellow-400"><i data-lucide="terminal"></i></div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Tools & Platforms</h4>
+                        <p class="text-gray-400">Git/GitHub, VS Code, npm. Proficient in modern development workflows.</p>
+                    </div>
+                </div>
+                <div class="p-6 rounded-xl border border-gray-800 hover:bg-gray-900/50 transition-colors flex gap-4">
+                    <div class="mt-1 text-red-400"><i data-lucide="cpu"></i></div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Hardware & Prototyping</h4>
+                        <p class="text-gray-400">Arduino (LEDs, sensors, basic circuits), Tinkercad simulations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strengths Section -->
+    <section id="strengths" class="py-24 px-4 md:px-8 max-w-7xl mx-auto overflow-hidden">
+        <div class="text-center mb-16">
+            <h2 class="text-sm font-medium text-gray-500 mb-4 uppercase tracking-wider">Why Me?</h2>
+            <h3 class="text-3xl md:text-4xl font-bold">My Strengths</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-8 rounded-2xl bg-gray-900/30 border border-gray-800 hover:border-gray-600 transition-all">
+                <div class="mb-6 text-white"><i data-lucide="code" size="32"></i></div>
+                <h4 class="font-bold text-xl mb-4">Fast Learner</h4>
+                <p class="text-gray-300 leading-relaxed">Highly curious and able to grasp new concepts quickly. Comfortable learning independently through documentation and practice.</p>
+            </div>
+            <div class="p-8 rounded-2xl bg-gray-900/30 border border-gray-800 hover:border-gray-600 transition-all">
+                <div class="mb-6 text-white"><i data-lucide="code" size="32"></i></div>
+                <h4 class="font-bold text-xl mb-4">Problem Solver</h4>
+                <p class="text-gray-300 leading-relaxed">Strong problem‑solving mindset. I enjoy breaking down complex issues into manageable steps to find efficient solutions.</p>
+            </div>
+            <div class="p-8 rounded-2xl bg-gray-900/30 border border-gray-800 hover:border-gray-600 transition-all">
+                <div class="mb-6 text-white"><i data-lucide="code" size="32"></i></div>
+                <h4 class="font-bold text-xl mb-4">Versatile</h4>
+                <p class="text-gray-300 leading-relaxed">Interested in both software and hardware integration. Capable of bridging the gap between digital code and physical devices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Goal & Details (FAQ) Section -->
+    <section class="py-24 px-4 md:px-8 max-w-3xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-sm font-medium text-gray-500 mb-4 uppercase tracking-wider">Future & Info</h2>
+            <h3 class="text-3xl md:text-4xl font-bold">Career Goals & Details</h3>
+        </div>
+
+        <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <div class="border border-gray-800 rounded-xl overflow-hidden bg-gray-900/20">
+                <button class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-900/50 transition-colors faq-btn">
+                    <span class="font-medium">What is your career goal?</span>
+                    <i data-lucide="plus" class="text-gray-400 icon-plus"></i>
+                    <i data-lucide="minus" class="text-gray-400 icon-minus hidden"></i>
+                </button>
+                <div class="p-6 pt-0 text-gray-400 border-t border-gray-800/50 hidden faq-content">
+                    To grow into a skilled full‑stack developer capable of building secure, scalable, and visually appealing applications, while exploring the intersection of web technology and interactive systems.
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="border border-gray-800 rounded-xl overflow-hidden bg-gray-900/20">
+                <button class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-900/50 transition-colors faq-btn">
+                    <span class="font-medium">Where are you located?</span>
+                    <i data-lucide="plus" class="text-gray-400 icon-plus"></i>
+                    <i data-lucide="minus" class="text-gray-400 icon-minus hidden"></i>
+                </button>
+                <div class="p-6 pt-0 text-gray-400 border-t border-gray-800/50 hidden faq-content">
+                    I am currently based in Rwanda.
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="border border-gray-800 rounded-xl overflow-hidden bg-gray-900/20">
+                <button class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-900/50 transition-colors faq-btn">
+                    <span class="font-medium">What is your availability?</span>
+                    <i data-lucide="plus" class="text-gray-400 icon-plus"></i>
+                    <i data-lucide="minus" class="text-gray-400 icon-minus hidden"></i>
+                </button>
+                <div class="p-6 pt-0 text-gray-400 border-t border-gray-800/50 hidden faq-content">
+                    I am open to internships, junior roles, and learning opportunities where I can contribute and grow.
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="border border-gray-800 rounded-xl overflow-hidden bg-gray-900/20">
+                <button class="w-full flex justify-between items-center p-6 text-left hover:bg-gray-900/50 transition-colors faq-btn">
+                    <span class="font-medium">What are your main interests?</span>
+                    <i data-lucide="plus" class="text-gray-400 icon-plus"></i>
+                    <i data-lucide="minus" class="text-gray-400 icon-minus hidden"></i>
+                </button>
+                <div class="p-6 pt-0 text-gray-400 border-t border-gray-800/50 hidden faq-content">
+                    I am passionate about modern web development, interactive UIs, and hardware prototyping with Arduino.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-12 px-4 border-t border-gray-900 text-center">
+        <h2 class="text-2xl font-bold mb-8">Let's build something great together</h2>
+        <div class="flex justify-center gap-6 mb-12">
+            <a href="https://github.com/rockyishimwe" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
+            <a href="" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a>
+            <a href="mailto:contact@ishimwerocky.com" class="text-gray-400 hover:text-white transition-colors">Email</a>
+        </div>
+        <p class="text-gray-600 text-sm">© 2024 Ishimwe Rocky. All rights reserved.</p>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <a href="mailto:rockyishimwe9@.com" class="fixed bottom-8 right-8 px-6 py-3 bg-white text-black rounded-full font-bold shadow-lg hover:bg-gray-200 transition-colors flex items-center gap-2 z-50">
+        <i data-lucide="message-circle" size="20"></i>
+        Get in Touch
+    </a>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenu.classList.contains('hidden') ? 'menu' : 'x';
+            // Re-render icon (simplified for vanilla)
+            menuBtn.innerHTML = `<i data-lucide="${icon}"></i>`;
+            lucide.createIcons();
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.innerHTML = `<i data-lucide="menu"></i>`;
+                lucide.createIcons();
+            });
+        });
+
+        // FAQ Accordion
+        const faqBtns = document.querySelectorAll('.faq-btn');
+
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const plusIcon = btn.querySelector('.icon-plus');
+                const minusIcon = btn.querySelector('.icon-minus');
+
+                content.classList.toggle('hidden');
+                plusIcon.classList.toggle('hidden');
+                minusIcon.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
+
