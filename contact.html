@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Elite Estates</title>
+
+    <style>
+      :root {
+        --primary-color: #1e40af;
+        --primary-dark: #1e3a8a;
+        --primary-light: #3b82f6;
+        --text-primary: #1f2937;
+        --text-secondary: #6b7280;
+        --text-light: #9ca3af;
+        --bg-white: #ffffff;
+        --bg-light: #f9fafb;
+        --bg-dark: #111827;
+        --border-color: #e5e7eb;
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background: var(--bg-white);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--text-primary);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: var(--transition);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* ==================== NAVIGATION ====================  */
+      .navbar {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow-md);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .logo-icon {
+        width: 32px;
+        height: 32px;
+        background: var(--primary-color);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--text-primary);
+        font-weight: 500;
+        font-size: 0.95rem;
+        position: relative;
+        padding: 0.5rem 0;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary-color);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--primary-color);
+      }
+
+      .mobile-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+
+      .mobile-toggle span {
+        width: 25px;
+        height: 3px;
+        background: var(--text-primary);
+        border-radius: 2px;
+        transition: var(--transition);
+      }
+
+      /* ==================== PAGE HEADER ====================  */
+      .page-header {
+        min-height: 50vh;
+        background: linear-gradient(
+            rgba(30, 64, 175, 0.85),
+            rgba(59, 130, 246, 0.85)
+          ),
+          url("https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80")
+            center/cover fixed;
+        color: var(--bg-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .page-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+        opacity: 0.3;
+      }
+
+      .page-header-content {
+        position: relative;
+        z-index: 1;
+        animation: fadeInUp 0.8s ease;
+      }
+
+      .page-title {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        font-weight: 800;
+      }
+
+      .page-subtitle {
+        font-size: 1.3rem;
+        opacity: 0.95;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* ==================== CONTACT SECTION ====================  */
+      .contact-section {
+        padding: 6rem 2rem;
+        background: linear-gradient(
+            135deg,
+            rgba(249, 250, 251, 0.95),
+            rgba(243, 244, 246, 0.95)
+          ),
+          url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80")
+            center/cover fixed;
+        position: relative;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 4rem;
+      }
+
+      .contact-form-wrapper {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 3rem;
+        border-radius: 16px;
+        box-shadow: var(--shadow-xl);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        animation: slideInLeft 0.8s ease;
+      }
+
+      .form-title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-primary);
+      }
+
+      .form-description {
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+        font-size: 1.05rem;
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-label {
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+        font-size: 0.9rem;
+        color: var(--text-primary);
+      }
+
+      .form-input {
+        padding: 0.625rem 0.875rem;
+        border: 2px solid var(--border-color);
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-family: inherit;
+        transition: var(--transition);
+        background: white;
+        max-width: 100%;
+        width: 100%;
+      }
+      
+      /* Make individual text inputs narrower */
+      .form-group input[type="text"],
+      .form-group input[type="email"],
+      .form-group input[type="tel"] {
+        max-width: 400px;
+      }
+      
+      /* Keep select and textarea full width within their containers */
+      .form-group select {
+        max-width: 400px;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+      }
+
+      .form-textarea {
+        resize: vertical;
+        min-height: 100px;
+        box-sizing: border-box;
+        resize: none;
+      }
+
+      .btn-submit {
+        width: auto;
+        max-width: 250px;
+        padding: 0.75rem 2rem;
+        background: var(--primary-color);
+        color: var(--bg-white);
+        border: none;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: var(--shadow-md);
+      }
+
+      .btn-submit:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .btn-submit:active {
+        transform: translateY(0);
+      }
+
+      .contact-info-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 2.5rem;
+        border-radius: 16px;
+        box-shadow: var(--shadow-xl);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        animation: slideInRight 0.8s ease;
+      }
+
+      .info-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+      }
+
+      .info-text {
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+        line-height: 1.7;
+      }
+
+      .info-item {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+        transition: var(--transition);
+      }
+
+      .info-item:hover {
+        transform: translateX(5px);
+      }
+
+      .info-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .info-icon {
+        color: var(--primary-color);
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(30, 64, 175, 0.1);
+        border-radius: 10px;
+      }
+
+      .info-content {
+        flex: 1;
+      }
+
+      .info-label {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--text-primary);
+        font-size: 1rem;
+      }
+
+      .info-link {
+        color: var(--primary-color);
+        font-weight: 500;
+        display: inline-block;
+      }
+
+      .info-link:hover {
+        text-decoration: underline;
+      }
+
+      .info-text-small {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      /* ==================== MAP SECTION ====================  */
+      .map-section {
+        padding: 0;
+        height: 450px;
+        background: linear-gradient(
+            135deg,
+            rgba(30, 64, 175, 0.1),
+            rgba(59, 130, 246, 0.1)
+          ),
+          url("https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1600&q=80")
+            center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .map-placeholder {
+        text-align: center;
+        color: var(--text-secondary);
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .map-placeholder svg {
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+
+      /* ==================== FOOTER ====================  */
+      .footer {
+        background: var(--bg-dark);
+        color: var(--bg-white);
+        padding: 4rem 2rem 2rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-section {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--bg-white);
+      }
+
+      .footer-text {
+        color: var(--text-light);
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      .footer-heading {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        color: var(--bg-white);
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .footer-links a {
+        color: var(--text-light);
+        transition: var(--transition);
+        font-size: 0.95rem;
+      }
+
+      .footer-links a:hover {
+        color: var(--bg-white);
+        padding-left: 5px;
+      }
+
+      .footer-bottom {
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        color: var(--text-light);
+      }
+
+      /* ==================== NOTIFICATION ====================  */
+      .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: white;
+        padding: 1.25rem 1.75rem;
+        border-radius: 12px;
+        box-shadow: var(--shadow-xl);
+        z-index: 10000;
+        animation: slideInRight 0.3s ease;
+        max-width: 400px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .notification::before {
+        content: "✓";
+        width: 24px;
+        height: 24px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      /* ==================== ANIMATIONS ====================  */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-30px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      /* ==================== RESPONSIVE ====================  */
+      @media (max-width: 968px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile-toggle {
+          display: flex;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          height: 100vh;
+          width: 70%;
+          max-width: 300px;
+          background: var(--bg-white);
+          flex-direction: column;
+          padding: 5rem 2rem 2rem;
+          box-shadow: var(--shadow-xl);
+          transition: right 0.3s ease;
+          align-items: flex-start;
+          gap: 1.5rem;
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .page-title {
+          font-size: 2.5rem;
+        }
+
+        .page-subtitle {
+          font-size: 1.1rem;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-section {
+          padding: 4rem 2rem;
+        }
+
+        .map-section {
+          height: 300px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 0 1.5rem;
+        }
+
+        .nav-container {
+          padding: 1rem 1.5rem;
+        }
+
+        .contact-form-wrapper,
+        .contact-info-card {
+          padding: 2rem;
+        }
+
+        .page-title {
+          font-size: 2rem;
+        }
+
+        .form-title {
+          font-size: 1.5rem;
+        }
+
+        .info-title {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">🏠</div>
+          <span>ELITE ESTATES</span>
+        </a>
+        <div class="mobile-toggle" id="mobileToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+           <li><a href="mobileapp.html">Mobile App</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="page-header-content">
+        <h1 class="page-title">Get In Touch</h1>
+        <p class="page-subtitle">
+          Let's discuss how we can help you find your dream property or manage
+          your real estate investments
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Contact Form -->
+          <div class="contact-form-wrapper">
+            <h2 class="form-title">Send Us a Message</h2>
+            <p class="form-description">
+              Fill out the form below and our team will get back to you within
+              24 hours
+            </p>
+
+            <form class="contact-form" id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName" class="form-label">First Name *</label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    class="form-input"
+                    placeholder="xxx"
+                    required
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="lastName" class="form-label">Last Name *</label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    class="form-input"
+                    placeholder="xxx"
+                    required
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="xxxxxx@gmail.com"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-input"
+                  placeholder="+250 700 000 000"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="company" class="form-label"
+                  >Company (Optional)</label
+                >
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  class="form-input"
+                  placeholder="Your Company Name"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="service" class="form-label"
+                  >Service Interested In *</label
+                >
+                <select id="service" name="service" class="form-input" required>
+                  <option value="">Select a service</option>
+                  <option value="buy">Buy Property</option>
+                  <option value="sell">Sell Property</option>
+                  <option value="rent">Rent Property</option>
+                  <option value="management">Property Management</option>
+                  <option value="investment">Investment Consulting</option>
+                  <option value="virtual">Virtual Tours</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-input form-textarea"
+                  rows="6"
+                  placeholder="Tell us about your real estate needs..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit">Submit Inquiry</button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="contact-info-wrapper">
+            <div class="contact-info-card">
+              <h3 class="info-title">Contact Information</h3>
+              <p class="info-text">
+                We're here to answer your questions and help you navigate your
+                real estate journey with confidence.
+              </p>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <h4 class="info-label">Email Address</h4>
+                  <a href="mailto:rockyishimwe9@gmail.com" class="info-link"
+                    >rockyishimwe9@gmail.com</a
+                  >
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <h4 class="info-label">Phone Number</h4>
+                  <a href="tel:+250732914797" class="info-link"
+                    >+250791039241</a
+                  >
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <h4 class="info-label">Office Location</h4>
+                  <p class="info-text-small">
+                    Kigali, Rwanda<br>KG 123 Street<br>Downtown Area
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div class="info-content">
+                  <h4 class="info-label">Business Hours</h4>
+                  <p class="info-text-small">
+                    Monday - Friday: 8:00 AM - 7:00 PM<br>Saturday: 9:00 AM -
+                    5:00 PM<br>Sunday: By Appointment
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+      <div class="map-placeholder">
+        <svg
+          width="64"
+          height="64"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <h3 style="margin-bottom: 0.5rem; color: var(--text-primary)">
+          Find Us Here
+        </h3>
+        <p>Visit our office in the heart of Kigali</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3 class="footer-title">ELITE ESTATES</h3>
+            <p class="footer-text">
+              Your trusted partner in real estate excellence. Delivering premium
+              properties and exceptional service since 2008.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="mobileapp.html">Mobile app</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#services">Services</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4 class="footer-heading">Contact Us</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="mailto:rockyishimwe9@gmail.com"
+                  >rockyishimwe9@gmail.com</a
+                >
+              </li>
+              <li><a href="tel:+250732914797">+250 732 914 797</a></li>
+              <li>
+                <a href="https://google.com" target="_blank"
+                  >Search more about us</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Elite Estates. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="contact.js">
+    </script>
+  </body>
+</html>
